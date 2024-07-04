@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Lines&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #073849, #021720);
+    font-family: "Rubik Lines", system-ui;
+}
+
+.intro {
+    color: #fde5da;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+    text-align: center;
+}
+
+.intro .intro-text {
+    font-size: 4rem;
+}
+
+.intro .intro-text span {
+    display: inline-block;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: typeAndMerge 2s forwards ease-in;
+    animation-delay: calc(var(--i) * 1s);
+}
+
+.intro .intro-text span:nth-child(4) {
+    --marginRight: -30px;
+    color: #f1ad8d;
+}
+
+.intro .intro-text span:nth-child(5) {
+    --marginLeft: -30px;
+    color: #f1ad8d;
+}
+
+.intro .intro-inner-bottom span {
+    color: #f1ad8d;
+    font-size: 0.9rem;
+    letter-spacing: -6px;
+    word-spacing: 25px;
+    opacity: 0;
+    animation: typeAndMerge 0.5s forwards ease-in;
+    animation-delay: 2.5s;
+}
+
+@keyframes typeAndMerge {
+    0%{
+        transform: scaleX(0);
+    }
+    1%{
+        transform: scaleX(1);
+    }
+    90%{
+        transform: scaleX(1);
+        margin-right: var(--marginRight);
+        margin-left: var(--marginLeft);
+    }
+    100% {
+        transform: scaleX(1);
+        margin-right: var(--marginRight);
+        margin-left: var(--marginLeft);
+        opacity: 1;
+        letter-spacing: 6px;
+    }
+}
